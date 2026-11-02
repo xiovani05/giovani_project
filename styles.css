@@ -1,0 +1,234 @@
+/* CONFIGURACIÓN Y VARIABLES DE COLOR */
+:root {
+    --bg-primary: #f1f5f9;
+    --bg-card: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --accent: #0d9488;
+    --border-color: #e2e8f0;
+}
+
+/* Paleta de colores para Acceso 2 (Diseño Técnico Oscuro) */
+.theme-acceso2 {
+    --bg-primary: #0f172a;
+    --bg-card: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #a855f7;
+    --border-color: #334155;
+}
+
+/* Paleta de colores para Acceso 3 (Diseño Simple Grisáceo) */
+.theme-acceso3 {
+    --bg-primary: #f3f4f6;
+    --bg-card: #ffffff;
+    --text-main: #374151;
+    --text-muted: #9ca3af;
+    --accent: #4b5563;
+    --border-color: #d1d5db;
+}
+
+/* ESTILOS GENERALES */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding-bottom: 3rem;
+}
+
+/* ENCABEZADO */
+.main-header {
+    background-color: var(--bg-card);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-b: 1px solid var(--border-color);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+#site-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+#site-subtitle {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* BADGES DE ROLES */
+.badge {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 50px;
+}
+.badge-public { background-color: #e2e8f0; color: #334155; }
+.badge-acceso1 { background-color: #ccfbf1; color: #115e59; }
+.badge-acceso2 { background-color: #f3e8ff; color: #6b21a8; }
+.badge-acceso3 { background-color: #e5e7eb; color: #374151; }
+
+/* REJILLA DE CONTENIDOS */
+.grid-container {
+    max-w: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem;
+}
+
+/* TARJETAS DE SECCIÓN */
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+/* EL BOTÓN CASI INVISIBLE (EDICIÓN SECRETA) */
+.secret-trigger {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.65rem;
+    padding: 0.2rem 0.4rem;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--text-muted);
+    border-radius: 4px;
+    opacity: 0.02; /* Prácticamente invisible */
+    cursor: default;
+    transition: opacity 0.2s ease;
+}
+
+.secret-trigger:hover {
+    opacity: 0.4; /* Se revela sutilmente al pasar el puntero */
+    cursor: pointer;
+}
+
+/* BOTONES DEL PANEL DE EDICIÓN */
+.btn-edit-action {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.35rem 0.7rem;
+    font-size: 0.75rem;
+    background-color: #f59e0b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-logout {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+    color: #ef4444;
+    background: transparent;
+    border: 1px solid #ef4444;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn-logout:hover { background-color: #fef2f2; }
+
+/* FORMULARIOS INTERNOS DE EDICIÓN */
+.edit-form-group {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.edit-form-group input[type="text"] {
+    flex: 1;
+    padding: 0.4rem;
+    font-size: 0.85rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+.btn-delete {
+    background-color: #dc2626;
+    color: white;
+    border: none;
+    padding: 0 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.form-actions-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* VENTANA MODAL EMERGENTE */
+.modal {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.modal-content {
+    background-color: white;
+    color: #0f172a;
+    padding: 1.5rem;
+    border-radius: 8px;
+    max-width: 360px;
+    width: 100%;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+}
+.modal-content h3 { margin-bottom: 0.25rem; font-size: 1.2rem; }
+.modal-content p { font-size: 0.8rem; color: #64748b; margin-bottom: 1rem; }
+.modal-content input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+}
+.modal-buttons { display: flex; justify-content: flex-end; gap: 0.5rem; }
+.btn-primary { background-color: #0f172a; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; }
+.btn-secondary { background: transparent; color: #64748b; border: none; padding: 0.5rem 1rem; cursor: pointer; }
+
+/* UTILIDADES */
+.hidden { display: none !important; }
