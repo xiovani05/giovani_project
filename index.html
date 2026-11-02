@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Gestión - Restaurante</title>
+    <!-- Vinculación del archivo de estilos externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-default">
+
+    <!-- Encabezado de la página -->
+    <header class="main-header">
+        <div class="header-info">
+            <h1 id="site-title">Sabor & Gestión</h1>
+            <p id="site-subtitle">Panel General del Restaurante</p>
+        </div>
+        <div class="header-actions">
+            <span id="role-badge" class="badge badge-public">Vista: Pública</span>
+            <button onclick="logout()" id="btn-logout" class="btn-logout hidden">Cerrar Sesión</button>
+        </div>
+    </header>
+
+    <!-- Contenedor dinámico donde se inyectan las secciones según el acceso -->
+    <main id="main-container" class="grid-container">
+        <!-- El contenido se genera automáticamente mediante JavaScript -->
+    </main>
+
+    <!-- Ventana emergente (Modal) para validar la contraseña de edición -->
+    <div id="auth-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>Acceso de Personal</h3>
+            <p>Inserta una clave de acceso autorizada para gestionar este módulo.</p>
+            <input type="password" id="modal-password" placeholder="••••••••">
+            <div class="modal-buttons">
+                <button onclick="closeAuthModal()" class="btn-secondary">Cerrar</button>
+                <button onclick="verifySectionPassword()" class="btn-primary">Validar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vinculación de la lógica del sistema -->
+    <script src="app.js"></script>
+</body>
+</html>
